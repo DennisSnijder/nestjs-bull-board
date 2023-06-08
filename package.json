@@ -2,6 +2,15 @@
   "name": "nestjs-bull-board",
   "version": "1.0.1",
   "description": "NestJS module for bull-board",
+  "keywords": [
+    "bull",
+    "bullmq",
+    "redis",
+    "queue",
+    "monitoring",
+    "dashboard",
+    "nestjs"
+  ],
   "main": "dist/index.js",
   "author": "Dennis Snijder",
   "license": "MIT",
@@ -31,5 +40,9 @@
     "@nestjs/core": "^8.0.0 || ^9.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DennisSnijder/nestjs-bull-board"
   }
 }
