@@ -64,5 +64,25 @@ The following options are available.
 - `adapter` either `BullAdapter` or `BullMQAdapter` depending on which package you use.
 - `options` queue adapter options as found in the bull-board package, such as `readOnlyMode`, `description` etc.
 
+##  Using the bull-board instance in your controllers and/or services.
+The created bull-board instance is available via the `@InjectBullBoard()` decorator.
+For example in a controller:
+
+```typescript
+import { Controller, Get } from "@nestjs/common";
+import { BullBoardInstance, InjectBullBoard } from "nestjs-bull-board";
+
+@Controller('my-feature')
+export class FeatureController {
+
+  constructor(
+    @InjectBullBoard() private readonly boardInstance: BullBoardInstance
+  ) {
+  }
+  
+  //controller methods
+}
+```
+
 ## Known limitations
 -  Can only be used with `express` since the `ExpressAdapter` is being used internally.
