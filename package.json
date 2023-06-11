@@ -20,6 +20,7 @@
   "devDependencies": {
     "@bull-board/api": "^5.2.1",
     "@bull-board/express": "^5.2.1",
+    "@bull-board/fastify": "^5.2.1",
     "@nestjs/bullmq": "^1.1.0",
     "@nestjs/common": "9.4.2",
     "@nestjs/core": "9.4.2",

@@ -2,8 +2,17 @@
 A simple NestJS module for using bull-board with NestJS.
 
 ## Installation
+
+Install both @bull-board/api and this module.
 ```bash
-$ npm install --save nestjs-bull-board @bull-board/api @bull-board/express
+$ npm install --save nestjs-bull-board @bull-board/api
+```
+
+Install the Express or Fastify adapter depending on what you use in NestJS (default is Express)
+```bash
+$ npm install --save @bull-board/express
+//or 
+$ npm install --save @bull-board/fastify
 ```
 
 ## Register the root module
@@ -12,24 +21,28 @@ Once the installation is completed, we can import the `BullBoardModule` into you
 ```typescript
 import { Module } from '@nestjs/common';
 import { BullBoardModule } from "nestjs-bull-board";
+import { ExpressAdapter } from "@bull-board/express";
 
 @Module({
   imports: [
     BullModule.forRoot({
       // your bull module config here.
     }),
-    
+
     BullBoardModule.forRoot({
       route: '/queues',
+      adapter: ExpressAdapter // Or FastifyAdapter from `@bull-board/fastify`
     }),
   ],
 })
-export class AppModule {}
+export class AppModule {
+}
 ```
 
 The `forRoot()` method registers the bull-board instance and allows you to pass several options to both the instance and module.
 The following options are available.
 - `route` the base route for the bull-board instance adapter.
+- `adapter` The routing adapter to be used, either the Express Adapter or Fastify Adapter provided by bull-board.
 - `boardOptions` options as provided by the bull-board package, such as `uiBasePath` and `uiConfig`
 - `middleware` optional middleware for the express adapter (e.g. basic authentication)
 
