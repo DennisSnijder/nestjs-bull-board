@@ -1,6 +1,8 @@
 # NestJS bull-board module
 A simple NestJS module for using bull-board with NestJS.
 
+[![NPM](https://img.shields.io/npm/v/nestjs-bull-board.svg)](https://www.npmjs.com/package/nestjs-bull-board)
+
 ## Installation
 
 Install both @bull-board/api and this module.
@@ -96,6 +98,3 @@ export class FeatureController {
   //controller methods
 }
 ```
-
-## Known limitations
--  Can only be used with `express` since the `ExpressAdapter` is being used internally.
