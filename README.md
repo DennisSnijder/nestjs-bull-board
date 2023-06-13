@@ -1,3 +1,8 @@
+# This package has been migrated
+This package has been migrated to the official [bull-board repository](https://github.com/felixmosh/bull-board/tree/master/packages/nestjs) and will be maintained from there. 
+
+Please use the official `@bull-board/nestjs` package for future support and maintenance.
+
 # NestJS bull-board module
 A simple NestJS module for using bull-board with NestJS.
 
